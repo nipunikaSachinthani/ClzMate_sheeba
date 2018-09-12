@@ -21,7 +21,7 @@ export default class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            Username :'',
+            email :'',
             password :'',
         }
     }
@@ -55,7 +55,7 @@ export default class Login extends Component {
             placeholder = 'Enter your Username'
             placeholderTextColor = 'black'
             underlineColorAndroid = 'transparent'
-            onChangeText={ (Username ) => this.setState({Username})
+            onChangeText={ (email ) => this.setState({email})
              }
                                 
             />
@@ -87,30 +87,30 @@ export default class Login extends Component {
   }
   login = () => {
       
-      fetch('http://localhost:3000/user/login',{
+      fetch('https://polar-meadow-28819.herokuapp.com/user/login',{
           method: 'POST',
           headers: {
             'Content-type':'application/json',
           },
           body: JSON.stringify({
-              Username : this.state.Username ,
+              email : this.state.email ,
               password : this.state.password,
           })
       })
 
-         .then((res) => res.json())
+         .then((responce) => responce.json())
          .then((res) =>{
-          
-             if(res.body === true) {
-                  AsyncStorage.setItem('token', res.token);
-                  this.props.navigation.navigate('Profile');
-          }
-          else{
-             alert('no responce from backend');
-          }
-      }) 
-      .done();
-  }
+            if(res.state === true) {
+                alert('Succesfully Loged in');
+                AsyncStorage.setItem('token', res.JWT_Token);
+                this.props.navigation.navigate('Profile');
+            }
+            else{
+                alert('No Responce');
+            }
+        }) 
+        .done();
+    }
 }
 
 const styles = StyleSheet.create({
