@@ -21,7 +21,7 @@ export default class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
-            email :'',
+            Username :'',
             password :'',
         }
     }
@@ -40,9 +40,10 @@ export default class Login extends Component {
     
     render() {
     return (
-        <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
-       <ImageBackground source={require('../../img/a.jpg')}
+        <ImageBackground source={require('../../img/a.jpg')}
        style={styles.backgroundImage}>
+        <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
+       
         
         <View style = {styles.container}>
         
@@ -50,11 +51,12 @@ export default class Login extends Component {
 
             <TextInput
             style = {styles.textInput} 
-            keyboardType = 'email-address'
-            placeholder = 'Enter your email'
+            
+            placeholder = 'Enter your Username'
             placeholderTextColor = 'black'
             underlineColorAndroid = 'transparent'
-            onChangeText={ (email ) => this.setState({email})}
+            onChangeText={ (Username ) => this.setState({Username})
+             }
                                 
             />
 
@@ -64,7 +66,8 @@ export default class Login extends Component {
               placeholder = 'Enter Your password'
               secureTextEntry = {true}
               underlineColorAndroid = 'transparent' 
-            onChangeText={ (password) => this.setState({password})}
+            onChangeText={ (password) => this.setState({password})
+             }
                                
             />
 
@@ -76,32 +79,34 @@ export default class Login extends Component {
      
            
         </View>
-        </ImageBackground>
+       
         </KeyboardAvoidingView> 
+        </ImageBackground>
      
     );
   }
   login = () => {
-      //alert(this.state.email);
+      
       fetch('http://localhost:3000/user/login',{
           method: 'POST',
           headers: {
             'Content-type':'application/json',
           },
           body: JSON.stringify({
-              email   :this.state.email ,
-              password:this.state.password,
+              Username : this.state.Username ,
+              password : this.state.password,
           })
       })
-      .then((res) => res.json())
-      .then((res) =>{
-          alert(response.message);
-          if(res.body === true) {
-              AsyncStorage.setItem('user', res.user);
-              this.props.navigation.navigate('Profile');
+
+         .then((res) => res.json())
+         .then((res) =>{
+          
+             if(res.body === true) {
+                  AsyncStorage.setItem('token', res.token);
+                  this.props.navigation.navigate('Profile');
           }
           else{
-             alert('no responce');
+             alert('no responce from backend');
           }
       }) 
       .done();
@@ -121,34 +126,30 @@ const styles = StyleSheet.create({
    
 
     container:{
-       // flex: 1,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        //backgroundColor: '#1976d2',
         paddingLeft: 40,
         paddingRight: 40,
     },
    
-    header:{
-        fontSize: 24,
-        marginBottom: 60,
-        color: 'black',
-        fontWeight: 'bold',
-    },
+    
 
     textInput:{
        alignSelf: 'stretch',
+       borderRadius: 4,
        padding: 20,
        marginBottom: 30,
        backgroundColor: 'rgba(10,20,150,0.25)',
        alignItems: 'center',
-       borderColor: 'gray',
+       justifyContent: 'center',
+       
 
     },
 
     btn:{
         alignSelf: 'stretch',
-        backgroundColor: 'blue',
+        backgroundColor: 'rgba(10,60,250,0.75)',
         padding: 20,
         alignItems: 'center',
         marginBottom: 60,

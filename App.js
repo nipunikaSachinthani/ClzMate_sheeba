@@ -20,9 +20,9 @@ const Application = StackNavigator({
   Home: { screen: Login},
   Profile: { screen: Profile},
 },{
-  navigationOptions:{
-    header: false,
-  }
+ mode:'model',
+ headerMode:'none'
+  
 });
 
 export default class App extends Component {
