@@ -27,7 +27,7 @@ const Application = StackNavigator({
 
 export default class App extends Component {
   render() {
-    return (
+    return ( 
      <Application />
     );
   }

@@ -41,29 +41,31 @@ export default class Login extends Component {
     render() {
     return (
         <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
-       <ImageBackground source={require('../../img/b.jpg')}
+       <ImageBackground source={require('../../img/a.jpg')}
        style={styles.backgroundImage}>
         
         <View style = {styles.container}>
         
-            <Text style = {styles.header}>
-                     - LOGIN -
-            </Text>
+           
 
             <TextInput
             style = {styles.textInput} 
-            placehalder='email'
-            value={this.state.email}
+            keyboardType = 'email-address'
+            placeholder = 'Enter your email'
+            placeholderTextColor = 'black'
+            underlineColorAndroid = 'transparent'
             onChangeText={ (email ) => this.setState({email})}
-            underlineColorAndroid = 'transparent'                     
+                                
             />
 
            <TextInput
             style = {styles.textInput} 
-            placehalder='password'
-            value={this.state.password}
+            keyboardType = 'default'
+              placeholder = 'Enter Your password'
+              secureTextEntry = {true}
+              underlineColorAndroid = 'transparent' 
             onChangeText={ (password) => this.setState({password})}
-            underlineColorAndroid = 'transparent'                     
+                               
             />
 
             <TouchableOpacity  
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
         flex: 1,
         width: null,
         height: null,
-        //resizeMode: 'cover'
+        
     },
    
 
@@ -138,16 +140,19 @@ const styles = StyleSheet.create({
        alignSelf: 'stretch',
        padding: 20,
        marginBottom: 30,
-       backgroundColor: '#ffff',
+       backgroundColor: 'rgba(10,20,150,0.25)',
+       alignItems: 'center',
+       borderColor: 'gray',
 
     },
 
     btn:{
         alignSelf: 'stretch',
-        backgroundColor: '#ffff',
+        backgroundColor: 'blue',
         padding: 20,
         alignItems: 'center',
-    },
+        marginBottom: 60,
+        },
     logText:{
         fontSize:16,
     
