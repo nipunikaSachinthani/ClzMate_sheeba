@@ -40,7 +40,7 @@ export default class Login extends Component {
     
     render() {
     return (
-        <ImageBackground source={require('../../img/a.jpg')}
+        <ImageBackground source={require('../../img/e.jpg')}
        style={styles.backgroundImage}>
         <KeyboardAvoidingView behavior = 'padding' style = {styles.wrapper}>
        
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
        borderRadius: 4,
        padding: 20,
        marginBottom: 30,
-       backgroundColor: 'rgba(10,20,150,0.25)',
+       backgroundColor: 'rgba(139,69,19,0.5)',
        alignItems: 'center',
        justifyContent: 'center',
        
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
 
     btn:{
         alignSelf: 'stretch',
-        backgroundColor: 'rgba(10,60,250,0.75)',
+        backgroundColor: 'rgba(139,69,19,0.9)',
         padding: 20,
         alignItems: 'center',
         marginBottom: 60,
