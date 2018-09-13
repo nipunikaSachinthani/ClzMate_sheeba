@@ -65,6 +65,7 @@ export default class Login extends Component {
             keyboardType = 'default'
               placeholder = 'Enter Your password'
               secureTextEntry = {true}
+              placeholderTextColor = 'black'
               underlineColorAndroid = 'transparent' 
             onChangeText={ (password) => this.setState({password})
              }

@@ -15,10 +15,13 @@ import {
 import {StackNavigator} from 'react-navigation';
 import Login from './app/components/Login';
 import Profile from './app/components/Profile';
+//import Splash from './app/components/Splash';
+//import SplashScreen from 'react-native-splash-screen';
 
 const Application = StackNavigator({
   Home: { screen: Login},
   Profile: { screen: Profile},
+  //Splash: { Screen: Splash},
 },{
  mode:'model',
  headerMode:'none'
@@ -32,5 +35,6 @@ export default class App extends Component {
     );
   }
 }
+//export default Navigation;
 
 
