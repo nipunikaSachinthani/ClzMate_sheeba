@@ -57,7 +57,7 @@ export  class Login extends Component {
 
             <TextInput
             style = {styles.textInput} 
-            
+            keyboardType = 'email-address'
             placeholder = 'Enter your Username'
             placeholderTextColor = 'black'
             underlineColorAndroid = 'transparent'

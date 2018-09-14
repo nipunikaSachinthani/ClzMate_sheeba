@@ -17,16 +17,14 @@ import {
 
 
 export class Splash extends Component {
-    static navigationOption = {
-        header:null 
-    }
-     
-    componentWillMount(){
-        setInterval (()=>{ 
-            this.props.navigation.navigate('Login');
-        }, 4000)
-    }
-           
+    static navigationOptions = {
+       header : null 
+   }
+       componentWillMount(){
+           setInterval(()=>{
+               this.props.navigation.navigate('Login');
+           },4000)
+       }    
   
     render() {
     return (
@@ -36,7 +34,7 @@ export class Splash extends Component {
         
         <View style = {styles.container}>
            
-              <Text style = {styles.text1}>- Welcome -</Text>
+              <Text style = {styles.text1}>- Welcome To The Card Marker Application -</Text>
         </View>
         
         </ ImageBackground>

@@ -21,22 +21,22 @@ import Splash from './app/components/Splash';
 
 
 const Application = StackNavigator({
-  Login: { screen: Login},
+  Login  : { screen: Login},
   Profile: { screen: Profile},
-  Splash: { screen: Splash},
+  Splash : { screen: Splash},
 },{
  mode:'model',
  headerMode:'none'
   
 });
 
-export default class App extends Component {
+export  class App extends Component {
   render() {
     return ( 
      <Application />
     );
   }
 }
-
+export default Application;
 
 
