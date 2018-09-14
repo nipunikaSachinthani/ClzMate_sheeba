@@ -12,30 +12,31 @@ import {
   Dimensions,
   Modal,
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
-//import SplashScreen from 'react-native-splash-screen';
 
-export default class Splash extends Component {
+
+
+
+export class Splash extends Component {
     static navigationOption = {
         header:null 
     }
+     
     componentWillMount(){
-        setInterval(()=>{
-            this.props.navigation.navigate('Login')
-        },4000)
+        setInterval (()=>{ 
+            this.props.navigation.navigate('Login');
+        }, 4000)
     }
            
- 
+  
     render() {
     return (
        
-        
-        < ImageBackground source = {require('../../img/d.jpg')}
-        style={styles.backgroundImage}>
+        < ImageBackground source = {require('../../img/c.jpg')}
+           style={styles.backgroundImage}>
         
         <View style = {styles.container}>
            
-
+              <Text style = {styles.text1}>- Welcome -</Text>
         </View>
         
         </ ImageBackground>
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
      flex: 1,
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#8B4513',
+    
    },
    backgroundImage: {
     flex: 1,
@@ -57,5 +58,12 @@ const styles = StyleSheet.create({
     height: null,
     
 },
+text1:{
+    fontSize:26,
+    fontWeight: "bold",
+    marginBottom:60,
+    color:'black',
+},
 
 });
+export default Splash;

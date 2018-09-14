@@ -11,12 +11,18 @@ import {
   TouchableOpacity,
   AsyncStorage, 
   ImageBackground,
+  ActivityIndicator, 
+  Dimensions,
+  Modal,
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
 
 
 
-export default class Login extends Component {
+
+export  class Login extends Component {
+    static navigationOption = {
+        header:null 
+    }
 
     constructor(props){
         super(props);
@@ -47,7 +53,7 @@ export default class Login extends Component {
         
         <View style = {styles.container}>
         
-           
+           <Text style = {styles.header}>LOGIN</Text>
 
             <TextInput
             style = {styles.textInput} 
@@ -157,7 +163,18 @@ const styles = StyleSheet.create({
         },
     logText:{
         fontSize:16,
+        fontWeight: "bold"
+    
+
+    },
+    header :{
+        fontSize:26,
+        fontWeight: "bold",
+        marginBottom:60,
+        color:'black',
+
     
 
     },
 });
+export default Login;

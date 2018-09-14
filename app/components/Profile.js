@@ -13,10 +13,11 @@ import {
   StatusBar,
   ImageBackground,
 } from 'react-native';
-import {StackNavigator} from 'react-navigation';
+import { NavigationActions, StackActions } from 'react-navigation';
 
 
-export default class Profile extends Component {
+
+export class Profile extends Component {
     
    /* componentDidMount(){
         this._loadInitialState().done();
@@ -57,3 +58,4 @@ const styles = StyleSheet.create({
      backgroundColor: '#8B4513',
    },
 });
+export default Profile;
