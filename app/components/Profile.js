@@ -12,6 +12,7 @@ import {
   View,
   StatusBar,
   ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 import { NavigationActions, StackActions } from 'react-navigation';
 
@@ -19,28 +20,19 @@ import { NavigationActions, StackActions } from 'react-navigation';
 
 export class Profile extends Component {
     
-   /* componentDidMount(){
-        this._loadInitialState().done();
-}
-         _loadInitialState = async() => {
-
-        var value = await AsyncStorage.getItem('user');
-
-        if(value!==null){
-            this.props.navigation.navigate('Profile');
-        }
-    }*/
- 
+  
     render() {
     return (
        
-        
-        
-        
-        <View style = {styles.container}>
+         <View style = {styles.container}>
             <Text style = {styles.header}>
-                   Welcome to the Member Area
+                   
             </Text>
+            <TouchableOpacity  
+                style = {styles.btn1}
+                > 
+                <Text style={styles.QR}> Scan QR code  </Text>
+            </TouchableOpacity>
 
         </View>
         
@@ -52,10 +44,24 @@ export class Profile extends Component {
 
 const styles = StyleSheet.create({
    container: {
-     flex: 1,
+    
      alignItems: 'center',
      justifyContent: 'center',
-     backgroundColor: '#8B4513',
+     backgroundColor: '#ffff',
+    
    },
+   QR:{
+    color:'#ffff',
+    fontSize:24,
+   },
+   btn1:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    height:300,
+    width:300,
+    backgroundColor:'black',
+    paddingBottom:20,
+    marginTop:180,
+   }
 });
 export default Profile;

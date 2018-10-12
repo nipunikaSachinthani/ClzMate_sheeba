@@ -110,6 +110,7 @@ export  class Login extends Component {
             if(res.state === true) {
                 alert('Succesfully Loged in');
                 AsyncStorage.setItem('token', res.JWT_Token);
+                alert(res.JWT_Token);
                 this.props.navigation.navigate('Profile');
             }
             else{
